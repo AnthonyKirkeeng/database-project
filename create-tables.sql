@@ -24,6 +24,17 @@ CREATE TABLE Customers (
   PRIMARY KEY (customer_id)
 );
 
+INSERT INTO Customers 
+(company_name, contact_name, contact_email, contact_number) 
+VALUES ('Bubly', 'Gerald Grover', 'Gerald.Grover@gmail.com', '888-123-4567' ) returning *;
+
+UPDATE Customers SET 
+contact_number = '888-321-7654'
+WHERE customer_id =  1;
+
+DELETE FROM Customers
+WHERE Customer_id = 1 returning *
+
 CREATE TABLE Items (
   item_id serial,
   name varchar(255),
